@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmoud Diab - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#8B5CF6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .dark-gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #581c87 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
+
+        .typing::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .slide-in {
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-700">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div
+                    class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    MD
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-primary transition-colors">Home</a>
+                    <a href="#about" class="hover:text-primary transition-colors">About</a>
+                    <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
+                    <!-- <a href="#experience" class="hover:text-primary transition-colors">Experience</a> -->
+                    <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle"
+                        class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                        <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-gray-200 dark:bg-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#home" class="block hover:text-primary transition-colors">Home</a>
+                <a href="#about" class="block hover:text-primary transition-colors">About</a>
+                <a href="#skills" class="block hover:text-primary transition-colors">Skills</a>
+                <a href="#experience" class="block hover:text-primary transition-colors">Experience</a>
+                <a href="#projects" class="block hover:text-primary transition-colors">Projects</a>
+                <a href="#contact" class="block hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="fade-in">
+                <div class="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-r from-primary to-secondary p-1">
+                    <div
+                        class="w-full h-full rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+                        <img src="https://ourheritage.runasp.net/File/ProfilePicture/5ca9ef51-568b-4c9f-a7f9-d4756b55697e.jpg"
+                            alt="Mahmoud Diab"
+                            class="w-full h-full object-cover rounded-full bg-gray-200 dark:bg-gray-800" />
+                    </div>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                    Hi, I'm <span
+                        class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Mahmoud
+                        Diab</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 typing">Full Stack Developer</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects"
+                        class="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                        View My Work
+                    </a>
+                    <a href="#contact"
+                        class="px-8 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-full transition-all duration-300">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="slide-in">
+                        <h3 class="text-2xl font-semibold mb-4">Backend Developer</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                            I'm Mahmoud Diab, a passionate software engineer with a strong focus on backend development,
+                            scalable APIs, and real-time systems. My expertise spans C#, ASP.NET Core, Entity Framework
+                            Core, and RESTful API design, with a deep understanding of clean architecture, CQRS, and
+                            advanced design patterns.
+                        </p>
+                        <!-- <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        I’ve built large-scale platforms like <strong>Our Heritage</strong> (real-time social platform), <strong>Twitter Clone API</strong> (social media backend), and <strong>Library Management System</strong> (role-based management and automation). My work demonstrates solid OOP principles, efficient query handling, and a commitment to maintainable, high-performance code.
+                    </p> -->
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                            I enjoy solving complex problems, designing robust systems, and collaborating with teams to
+                            deliver impactful solutions. Whether it's building interactive UIs, secure console apps, or
+                            scalable APIs, I strive to create software that is both user-friendly and technically sound.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <span class="text-sm">Available for freelance</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                <span class="text-sm">Open to opportunities</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-in">
+                        <div class="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl">
+                            <h4 class="text-xl font-semibold mb-6">Quick Facts</h4>
+                            <div class="space-y-4">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600 dark:text-gray-400">Experience</span>
+                                    <span class="font-semibold">1+ Years</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600 dark:text-gray-400">Projects Completed</span>
+                                    <span class="font-semibold">10+</span>
+                                </div>
+                                <!-- <div class="flex justify-between">
+                                <span class="text-gray-600 dark:text-gray-400">Happy Clients</span>
+                                <span class="font-semibold">30+</span>
+                            </div> -->
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600 dark:text-gray-400">Specialties</span>
+                                    <span class="font-semibold">.NET, APIs, OOP, Real-Time Apps</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600 dark:text-gray-400">Location</span>
+                                    <span class="font-semibold">Remote</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Skills & Expertise</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Backend & API -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="text-4xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-semibold mb-4">Backend & API Development</h3>
+                    <ul class="list-disc ml-5 mb-4 text-gray-600 dark:text-gray-400 text-sm">
+                        <li>C#, ASP.NET Core, Entity Framework Core</li>
+                        <li>RESTful API Design</li>
+                        <li>Clean Architecture, CQRS, Repository Pattern</li>
+                        <li>Authentication & Authorization (JWT)</li>
+                        <li>SignalR (Real-Time Communication)</li>
+                    </ul>
+                </div>
+                <!-- OOP & Patterns -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="text-4xl mb-4">🧩</div>
+                    <h3 class="text-xl font-semibold mb-4">Libraries & Design Patterns</h3>
+                    <ul class="list-disc ml-5 mb-4 text-gray-600 dark:text-gray-400 text-sm">
+                        <li>Specification, Unit of Work, Pagination</li>
+                        <li>MediatR, AutoMapper</li>
+                        <li>MailKit & MimeKit</li>
+                    </ul>
+                </div>
+                <!-- Frontend -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="text-4xl mb-4">🎨</div>
+                    <h3 class="text-xl font-semibold mb-4">Frontend Development</h3>
+                    <ul class="list-disc ml-5 mb-4 text-gray-600 dark:text-gray-400 text-sm">
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>Responsive UI & UX Design</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </div>
+                <!-- Tools & Database -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="text-4xl mb-4">🛠️</div>
+                    <h3 class="text-xl font-semibold mb-4">Tools & Database</h3>
+                    <ul class="list-disc ml-5 mb-4 text-gray-600 dark:text-gray-400 text-sm">
+                        <li>SQL Server, MySQL</li>
+                        <li>Git, GitHub, Visual Studio, VS Code</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Experience Section -->
+    <!-- <section id="experience" class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Experience</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-12">
+                    <div class="flex flex-col md:flex-row gap-8 slide-in">
+                        <div class="md:w-1/4">
+                            <div class="text-primary font-semibold">2022 - Present</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">2+ years</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-semibold mb-2">Senior Full Stack Developer</h3>
+                            <p class="text-primary mb-4">TechCorp Solutions</p>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Led development of enterprise web applications serving 100K+ users. 
+                                Implemented microservices architecture and improved application performance by 40%.
+                            </p>
+                            <ul class="text-gray-600 dark:text-gray-400 space-y-2">
+                                <li>• Architected and developed scalable React/Node.js applications</li>
+                                <li>• Mentored junior developers and established code review processes</li>
+                                <li>• Implemented CI/CD pipelines reducing deployment time by 60%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-8 slide-in">
+                        <div class="md:w-1/4">
+                            <div class="text-primary font-semibold">2020 - 2022</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">2 years</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-semibold mb-2">Full Stack Developer</h3>
+                            <p class="text-primary mb-4">StartupXYZ</p>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Developed MVP and scaled platform from 0 to 10K users. 
+                                Built responsive web applications and mobile apps using React Native.
+                            </p>
+                            <ul class="text-gray-600 dark:text-gray-400 space-y-2">
+                                <li>• Built complete web platform from scratch using MERN stack</li>
+                                <li>• Developed cross-platform mobile app with React Native</li>
+                                <li>• Integrated third-party APIs and payment gateways</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-8 slide-in">
+                        <div class="md:w-1/4">
+                            <div class="text-primary font-semibold">2019 - 2020</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">1 year</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-semibold mb-2">Frontend Developer</h3>
+                            <p class="text-primary mb-4">WebAgency Pro</p>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Specialized in creating pixel-perfect, responsive websites for clients across various industries. 
+                                Focused on performance optimization and user experience.
+                            </p>
+                            <ul class="text-gray-600 dark:text-gray-400 space-y-2">
+                                <li>• Developed 20+ responsive websites using modern frameworks</li>
+                                <li>• Improved website loading speeds by 50% through optimization</li>
+                                <li>• Collaborated with designers to implement complex UI/UX designs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Featured Projects</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Our Heritage -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden card-hover cursor-pointer">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-yellow-600 flex items-center justify-center">
+                        <div class="text-white text-6xl">🧵</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Our Heritage</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            A cultural social platform connecting users with skilled handcrafters. Features content
+                            sharing, real-time messaging, and interactive engagement.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">C#</span>
+                            <span
+                                class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-xs">ASP.NET
+                                Core 8</span>
+                            <span
+                                class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs">Entity
+                                Framework Core</span>
+                            <span
+                                class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-xs">SQL
+                                Server</span>
+                            <span
+                                class="px-2 py-1 bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 rounded text-xs">SignalR</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-primary font-semibold">RESTful API</span>
+                            <span class="text-primary hover:underline cursor-pointer"
+                                onclick="showProjectModal('heritage-modal')">Learn More</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Library Management System -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                        <div class="text-white text-6xl">📚</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Library Management System</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Full-featured system for managing books, user roles, borrowing, and reviews with clean
+                            architecture and CQRS.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">C#</span>
+                            <span
+                                class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-xs">ASP.NET
+                                Core 8</span>
+                            <span
+                                class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs">Entity
+                                Framework Core</span>
+                            <span
+                                class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-xs">SQL
+                                Server</span>
+                            <span
+                                class="px-2 py-1 bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 rounded text-xs">CQRS</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-primary font-semibold">Web App</span>
+                            <span class="text-primary hover:underline cursor-pointer"
+                                onclick="showProjectModal('library-modal')">Learn More</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- WhatsApp Clone Project Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
+                        <div class="text-white text-6xl">💬</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">WhatsApp Clone</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            A front-end clone of the popular messaging application WhatsApp. It aims to replicate the
+                            user interface and basic user experience of the original application.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">HTML</span>
+                            <span
+                                class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-xs">CSS</span>
+                            <span
+                                class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs">JavaScript</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-primary font-semibold">UI Clone</span>
+                            <span class="text-primary hover:underline cursor-pointer"
+                                onclick="showProjectModal('whatsapp-modal')">Learn More</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Twitter Clone API Project Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Twitter Clone</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Backend API replicating core Twitter features, built with ASP.NET Core and clean
+                            architecture.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">ASP.NET
+                                Core</span>
+                            <span
+                                class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-xs">REST
+                                API</span>
+                            <span
+                                class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-xs">Clean
+                                Architecture</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-primary font-semibold">Backend API</span>
+                            <span class="text-primary hover:underline cursor-pointer"
+                                onclick="showProjectModal('twitter-modal')">Learn More</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- ATM Console App Project Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-green-500 flex items-center justify-center">
+                        <div class="text-white text-6xl">🏧</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">ATM Console App</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Simple C# console application simulating ATM functionalities: deposit, withdrawal, and
+                            balance inquiry.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">C#</span>
+                            <span
+                                class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-xs">Console
+                                App</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-primary font-semibold">Console App</span>
+                            <span class="text-primary hover:underline cursor-pointer"
+                                onclick="showProjectModal('atm-modal')">Learn More</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Analytics Dashboard -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                        <div class="text-white text-6xl">📊</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Real-time analytics dashboard with interactive charts and data visualization.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">Vue.js</span>
+                            <span
+                                class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-xs">D3.js</span>
+                            <span
+                                class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-xs">Python</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-primary font-semibold">Dashboard</span>
+                            <span class="text-primary hover:underline cursor-pointer"
+                                onclick="showProjectModal('analytics-modal')">Learn More</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://github.com/Mahmoud-Elaaser" target="_blank"
+                    class="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    I'm always open to discussing new opportunities, interesting projects, or just having a chat about
+                    technology.
+                </p>
+            </div>
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div class="slide-in">
+                        <h3 class="text-2xl font-semibold mb-8">Let's Connect</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Email</p>
+                                    <p class="text-gray-600 dark:text-gray-400">mahmoudelaaser57@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Phone</p>
+                                    <p class="text-gray-600 dark:text-gray-400">+20 1063621416</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Location</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Menoufia, Egypt</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="mt-8">
+                            <h4 class="text-lg font-semibold mb-4">Follow Me</h4>
+                            <div class="flex gap-4">
+                                <!-- Twitter (optional, replace with your link or remove if not needed) -->
+                                <!-- <a href="https://twitter.com/mahmoud_diab57" target="_blank" rel="noopener"
+                                    class="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                                    </svg>
+                                </a> -->
+                                <!-- LinkedIn -->
+                                <a href="https://www.linkedin.com/in/Mahmoud-Elaaser" target="_blank" rel="noopener"
+                                    class="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                    </svg>
+                                </a>
+                                <!-- GitHub -->
+                                <a href="https://github.com/Mahmoud-Elaaser" target="_blank" rel="noopener"
+                                    class="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <!-- Contact Form -->
+                <div class="slide-in">
+                    <h3 class="text-2xl font-semibold mb-8">Send Me a Message</h3>
+                    <form class="space-y-6" id="contact-form">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:ring-2 focus:ring-primary focus:border-transparent transition-colors">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:ring-2 focus:ring-primary focus:border-transparent transition-colors">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:ring-2 focus:ring-primary focus:border-transparent transition-colors">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="6" required
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 focus:ring-4 focus:ring-primary/20">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 dark:bg-gray-950 text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center gap-4">
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                </div>
+                <div class="text-center text-sm text-gray-400">
+                    &copy; 2025 Mahmoud Diab. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Modals for all projects -->
+    <!-- Library Management System Modal -->
+    <div id="library-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 max-w-lg w-full relative">
+            <button onclick="closeProjectModal('library-modal')"
+                class="absolute top-4 right-4 text-gray-500 hover:text-primary text-2xl">&times;</button>
+            <h2 class="text-2xl font-bold mb-4">Library Management System - Project Details</h2>
+            <ul class="list-disc ml-5 mb-4 text-gray-700 dark:text-gray-300 text-sm">
+                <li>Implemented a full-featured Library Management System that manages books, user roles, borrowing
+                    operations, and reviews using clean architecture and the CQRS pattern.</li>
+                <li>Designed a flexible role management system with granular permissions.</li>
+                <li>Created an automated email notification system for account verification and password reset.</li>
+                <li>Achieved efficient query performance using specification pattern and pagination.</li>
+                <li>
+                    <a href="https://github.com/Mahmoud-Elaaser/LibraryManagementSystem.Api" target="_blank"
+                        class="text-primary underline">GitHub Repository</a>
+                </li>
+            </ul>
+            <div class="mb-4">
+                <span class="font-semibold">Technologies:</span>
+                <span
+                    class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded px-2 py-1">C#</span>
+                <span
+                    class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded px-2 py-1">ASP.NET
+                    Core 8</span>
+                <span
+                    class="text-xs bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded px-2 py-1">Entity
+                    Framework Core</span>
+                <span
+                    class="text-xs bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded px-2 py-1">SQL
+                    Server</span>
+                <span
+                    class="text-xs bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 rounded px-2 py-1">CQRS</span>
+                <span
+                    class="text-xs bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded px-2 py-1">MediatR</span>
+                <span
+                    class="text-xs bg-blue-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded px-2 py-1">AutoMapper</span>
+                <span
+                    class="text-xs bg-green-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded px-2 py-1">JWT
+                    Authentication</span>
+                <span
+                    class="text-xs bg-purple-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded px-2 py-1">Clean
+                    Architecture</span>
+                <span
+                    class="text-xs bg-yellow-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded px-2 py-1">Specification
+                    Design Pattern</span>
+                <span
+                    class="text-xs bg-pink-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded px-2 py-1">Repository
+                    Pattern</span>
+                <span
+                    class="text-xs bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded px-2 py-1">Unit
+                    of Work</span>
+            </div>
+        </div>
+    </div>
+    <!-- WhatsApp Clone Modal -->
+    <div id="whatsapp-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 max-w-lg w-full relative">
+            <button onclick="closeProjectModal('whatsapp-modal')"
+                class="absolute top-4 right-4 text-gray-500 hover:text-primary text-2xl">&times;</button>
+            <h2 class="text-2xl font-bold mb-4">WhatsApp Clone - Project Details</h2>
+            <ul class="list-disc ml-5 mb-4 text-gray-700 dark:text-gray-300 text-sm">
+                <li>Developed a front-end clone of WhatsApp using HTML and CSS, replicating the core UI elements.</li>
+                <li>Designed an interactive chat interface featuring a structured contact list, dynamic chat windows,
+                    and visually appealing message bubbles.</li>
+                <li>Implemented a functional message input system with real-time chat bubble updates for an enhanced
+                    user experience.</li>
+                <li>
+                    <a href="https://github.com/Mahmoud-Elaaser/whatsapp-clone" target="_blank"
+                        class="text-primary underline">GitHub Repository</a>
+                </li>
+            </ul>
+            <div class="mb-4">
+                <span class="font-semibold">Technologies:</span>
+                <span
+                    class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded px-2 py-1">HTML</span>
+                <span
+                    class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded px-2 py-1">CSS</span>
+                <span
+                    class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded px-2 py-1">JavaScript/span>
+            </div>
+        </div>
+    </div>
+    <div id="analytics-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 max-w-lg w-full relative">
+            <button onclick="closeProjectModal('analytics-modal')"
+                class="absolute top-4 right-4 text-gray-500 hover:text-primary text-2xl">&times;</button>
+            <h2 class="text-2xl font-bold mb-4">Analytics Dashboard - Project Details</h2>
+            <ul class="list-disc ml-5 mb-4 text-gray-700 dark:text-gray-300 text-sm">
+                <li>Real-time analytics dashboard with interactive charts and data visualization.</li>
+                <li>Customizable widgets and user-specific reports.</li>
+                <li>Integrates with multiple data sources for comprehensive insights.</li>
+            </ul>
+            <div class="mb-4">
+                <span class="font-semibold">Technologies:</span>
+                <span
+                    class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded px-2 py-1">Vue.js</span>
+                <span
+                    class="text-xs bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded px-2 py-1">D3.js</span>
+                <span
+                    class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded px-2 py-1">Python</span>
+            </div>
+        </div>
+    </div>
+    <!-- ATM Console App Modal -->
+    <div id="atm-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 max-w-lg w-full relative">
+            <button onclick="closeProjectModal('atm-modal')"
+                class="absolute top-4 right-4 text-gray-500 hover:text-primary text-2xl">&times;</button>
+            <h2 class="text-2xl font-bold mb-4">ATM Console App - Project Details</h2>
+            <ul class="list-disc ml-5 mb-4 text-gray-700 dark:text-gray-300 text-sm">
+                <li>ATM is a simple console application implemented in C#.</li>
+                <li>Simulates basic ATM functionalities such as depositing money, withdrawing money, and checking
+                    account balance.</li>
+                <li><strong>Features:</strong>
+                    <ul class="list-disc ml-5">
+                        <li>Account Management: Create and manage multiple accounts with individual balances.</li>
+                        <li>Deposit: Add funds to an account by depositing money.</li>
+                        <li>Withdrawal: Withdraw funds from an account.</li>
+                        <li>Balance Inquiry: Check the current balance of an account.</li>
+                        <li>
+                            <a href="https://github.com/Mahmoud-Elaaser/ATM" target="_blank"
+                                class="text-primary underline">GitHub Repository</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="mb-4">
+                <span class="font-semibold">Technologies:</span>
+                <span
+                    class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded px-2 py-1">C#</span>
+                <span
+                    class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded px-2 py-1">Console
+                    App</span>
+            </div>
+        </div>
+    </div>
+    <!-- Twitter Clone API Modal -->
+    <div id="twitter-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 max-w-lg w-full relative">
+            <button onclick="closeProjectModal('twitter-modal')"
+                class="absolute top-4 right-4 text-gray-500 hover:text-primary text-2xl">&times;</button>
+            <h2 class="text-2xl font-bold mb-4">Twitter Clone API - Project Details</h2>
+            <ul class="list-disc ml-5 mb-4 text-gray-700 dark:text-gray-300 text-sm">
+                <li>Twitter Clone API is a backend application built using ASP.NET Core that replicates core features of
+                    a social media platform like Twitter.</li>
+                <li>Designed with clean architecture principles for scalability, maintainability, and performance.</li>
+                <li><strong>Social Features:</strong>
+                    <ul class="list-disc ml-5">
+                        <li>Follow/Unfollow Users: Connect with other users by following or unfollowing them.</li>
+                        <li>Mute/Block Users: Customize your experience by muting or blocking specific users.</li>
+                        <li>Create Tweets: Share your thoughts and updates with others on the platform.</li>
+                        <li>Quote Tweets: Add your commentary while sharing another user's tweet.</li>
+                        <li>Retweet: Share existing tweets with your followers to amplify them.</li>
+                        <li>Likes: Express appreciation or agreement by liking tweets.</li>
+                        <li>Comments: Engage in discussions by adding comments to tweets.</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="https://github.com/Mahmoud-Elaaser/TwitterClone" target="_blank"
+                        class="text-primary underline">GitHub Repository</a>
+                </li>
+            </ul>
+            <div class="mb-4">
+                <span class="font-semibold">Technologies:</span>
+                <span
+                    class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded px-2 py-1">ASP.NET
+                    Core</span>
+                <span
+                    class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded px-2 py-1">REST
+                    API</span>
+                <span
+                    class="text-xs bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded px-2 py-1">Clean
+                    Architecture</span>
+            </div>
+        </div>
+    </div>
+    <!-- Heritage Modal -->
+    <div id="heritage-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 max-w-lg w-full relative">
+            <button onclick="closeHeritageModal()"
+                class="absolute top-4 right-4 text-gray-500 hover:text-primary text-2xl">&times;</button>
+            <h2 class="text-2xl font-bold mb-4">Our Heritage - Project Details</h2>
+            <ul class="list-disc ml-5 mb-4 text-gray-700 dark:text-gray-300 text-sm">
+                <li>Developed a cultural social platform that connects users with skilled handcrafters, enabling content
+                    sharing, real-time messaging, and interactive engagement.
+                </li>
+                <li>Enabled real-time communication via private/group chats and notifications (likes, comments, follows,
+                    messages) using SignalR.
+                </li>
+                <li>Developed an advanced search system to help users find top-rated handcrafters based on experience
+                    and engagement.
+                </li>
+                <li>Implemented an admin dashboard for managing users, content, and viewing statistics (monthly/yearly
+                    reports, top users, trending content).
+                </li>
+                <li>
+                    <a href="https://github.com/Mahmoud-Elaaser/OurHeritage.Api" target="_blank"
+                        class="text-primary underline">GitHub Repository</a>
+                </li>
+            </ul>
+            <div class="mb-4">
+                <span class="font-semibold">Technologies:</span>
+                <span
+                    class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded px-2 py-1">C#</span>
+                <span
+                    class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded px-2 py-1">ASP.NET
+                    Core 8</span>
+                <span
+                    class="text-xs bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded px-2 py-1">Entity
+                    Framework Core</span>
+                <span
+                    class="text-xs bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded px-2 py-1">SQL
+                    Server</span>
+                <span
+                    class="text-xs bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 rounded px-2 py-1">SignalR</span>
+                <span
+                    class="text-xs bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded px-2 py-1">JWT</span>
+                <span
+                    class="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded px-2 py-1">Repository
+                    Pattern</span>
+                <span
+                    class="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded px-2 py-1">Unit
+                    of Work</span>
+                <span
+                    class="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded px-2 py-1">Specification
+                    Pattern</span>
+                <span
+                    class="text-xs bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded px-2 py-1">Pagination</span>
+                <span
+                    class="text-xs bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded px-2 py-1">LINQ</span>
+                <span
+                    class="text-xs bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded px-2 py-1">MailKit
+                    & MimeKit</span>
+                <span
+                    class="text-xs bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded px-2 py-1">AutoMapper</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage?.getItem('theme') || 'light';
+        html.classList.toggle('dark', currentTheme === 'dark');
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            if (typeof Storage !== 'undefined') {
+                localStorage.setItem('theme', theme);
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on links
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact form handling
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Simple form validation and submission simulation
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+
+            // Simulate form submission
+            alert(`Thank you ${name}! Your message has been received. I'll get back to you soon.`);
+            contactForm.reset();
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all slide-in elements
+        document.querySelectorAll('.slide-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Typing animation for hero section
+        const typingElement = document.querySelector('.typing');
+        if (typingElement) {
+            const roles = ['Full Stack Developer', 'UI/UX Designer', 'Problem Solver', 'Tech Enthusiast'];
+            let currentRole = 0;
+            let currentChar = 0;
+            let isDeleting = false;
+
+            function typeRole() {
+                const current = roles[currentRole];
+
+                if (isDeleting) {
+                    typingElement.textContent = current.substring(0, currentChar - 1);
+                    currentChar--;
+                } else {
+                    typingElement.textContent = current.substring(0, currentChar + 1);
+                    currentChar++;
+                }
+
+                if (!isDeleting && currentChar === current.length) {
+                    setTimeout(() => isDeleting = true, 2000);
+                } else if (isDeleting && currentChar === 0) {
+                    isDeleting = false;
+                    currentRole = (currentRole + 1) % roles.length;
+                }
+
+                const speed = isDeleting ? 100 : 200;
+                setTimeout(typeRole, speed);
+            }
+
+            setTimeout(typeRole, 1000);
+        }
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // Add particle effect to hero section
+        function createParticles() {
+            const heroSection = document.getElementById('home');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'fixed pointer-events-none opacity-20';
+                particle.style.width = Math.random() * 4 + 1 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = '#3B82F6';
+                particle.style.borderRadius = '50%';
+                particle.style.left = Math.random() * window.innerWidth + 'px';
+                particle.style.top = Math.random() * window.innerHeight + 'px';
+                particle.style.zIndex = '-1';
+
+                heroSection.appendChild(particle);
+
+                // Animate particle
+                const duration = Math.random() * 20000 + 10000;
+                particle.animate([
+                    { transform: 'translateY(0px) translateX(0px)' },
+                    { transform: `translateY(-${Math.random() * 100 + 50}px) translateX(${Math.random() * 100 - 50}px)` }
+                ], {
+                    duration: duration,
+                    iterations: Infinity,
+                    direction: 'alternate'
+                });
+            }
+
+        }
+        // Modal functions for all projects
+        function showProjectModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+        function closeProjectModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+        function showHeritageModal() {
+            document.getElementById('heritage-modal').classList.remove('hidden');
+        }
+        function closeHeritageModal() {
+            document.getElementById('heritage-modal').classList.add('hidden');
+        }
+        // Initialize particles after page load
+        window.addEventListener('load', createParticles);
+    </script>
+</body>
+
+</html>
